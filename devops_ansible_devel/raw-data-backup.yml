@@ -1,0 +1,6 @@
+---
+- hosts: superprod
+  become: yes
+  roles:
+#    - { role: openmicroscopy.nfs-mount }
+    - { role: raw-data-backup }

@@ -1,0 +1,19 @@
+- hosts: all
+  tasks:
+
+  - name: Coy hosts file for go-dnsmasq
+    copy:
+      src: hosts.devops
+      dest: /etc/hosts.devops
+
+  - name: Install go-dnsmasq container
+    docker_container:
+      name: go-dnsmasq
+      image: janeczku/go-dnsmasq:latest
+      volumes: "/etc/hosts.devops:/etc/hosts"
+      ports:
+        - "53:53/udp"
+      env:
+        DNSMASQ_HOSTSFILE: "/etc/hosts.devops"
+      state: started
+      restart_policy: always

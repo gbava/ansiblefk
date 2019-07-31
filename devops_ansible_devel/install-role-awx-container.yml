@@ -1,0 +1,9 @@
+---
+- hosts: all 
+  roles:
+    - { role: geerlingguy.awx-container }
+  #  tasks:
+  #- name: Create AWX volume
+  #  docker_volume:
+  #    name: awx
+  #    state: present

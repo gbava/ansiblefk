@@ -1,0 +1,9 @@
+- hosts: localhost
+  roles:
+#  - role: nfs-mount
+    - { role: openmicroscopy.nfs-mount }
+  vars:
+    nfs_share_mounts:
+    - path: "{{ backup_folder }}"
+      location: "{{ nfs_host }}:/volume1/IT/Backups/raw_data_backups"
+      opts: "rw"

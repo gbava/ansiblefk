@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="faa24b74-7a13-45d6-bad2-953af6e72846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/host_vars/dev-fk-vm/all.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/host_vars/dev-fk-vm/firewall.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/host_vars/dev-fk-vm/mysql.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/defaults/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/handlers/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/meta/.galaxy_install_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/meta/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/tasks/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/tasks/databases.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/tasks/install.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/tasks/root-password.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/tasks/users.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/templates/etc_my.cnf.d_custom.cnf.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/templates/etc_my.cnf.d_network.cnf.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/templates/etc_my.cnf.d_server.cnf.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/bertvv.mariadb/vars/RedHat.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/defaults/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/handlers/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/meta/.galaxy_install_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/meta/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/marcelnijenhof.firewalld/vars/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/meta/.galaxy_install_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/meta/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/tests/Vagrantfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/dev-environment/roles/samdoran.repo_epel/tests/vagrant.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/group_vars/all.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/testserver.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-bitbucket-db.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-confluence-db.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-confluence-xml.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-jira-db.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-jira-xml.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/sync-bitbucket.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ansible/roles/migrate-data/sync-jira.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/atlassian-vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/backup-jira.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/create-vms.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/epel-repo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/firewall.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/fixes.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/group_vars/production.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/group_vars/staging.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/group_vars/test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/all.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/confluence.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/java.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/jira.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/mysql.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/network.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/atlassian-vm-1/vm.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/gsanso-fk.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/host_vars/superprod/all.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/install-confluence.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/install-jira.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/network.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/provision_vm.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/ansible-role-provision-vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/tasks/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/tasks/databases.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/tasks/install.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/tasks/root-password.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/tasks/users.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/templates/etc_my.cnf.d_custom.cnf.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/templates/etc_my.cnf.d_network.cnf.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/templates/etc_my.cnf.d_server.cnf.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bertvv.mariadb/vars/RedHat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/mysql.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/mysql.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/Debian.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/RedHat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/Solaris.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/Suse.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/Ubuntu.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/default.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/templates/java_home.sh.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/tests/test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/Debian-Open.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/RedHat-Open.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/RedHat-Oracle-7.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/RedHat-Oracle-8.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/Solaris-Oracle.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/Suse-Open.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/Suse-Oracle-7.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/Suse-Oracle-8.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/Ubuntu-Oracle.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/default-Oracle-7.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/default-Oracle-8.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/default.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/christopherdavenport.universal-java/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/.github/issue_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/.github/pull_request_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/ansible-xml.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/library/xml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/fixtures/ansible-xml-beers-unicode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/fixtures/ansible-xml-beers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/fixtures/ansible-xml-namespaced-beers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/group_vars/all" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/inventory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-children-elements-unicode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-children-elements.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-children-from-groupvars.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-children-with-attributes-unicode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-children-with-attributes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-element-implicitly.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-add-namespaced-children-elements.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-pretty-print-only.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-pretty-print.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-remove-attribute.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-remove-element.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-remove-namespaced-attribute.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-remove-namespaced-element.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-attribute-value-unicode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-attribute-value.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-children-elements-level.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-children-elements-unicode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-children-elements.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-element-value-empty.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-element-value-unicode.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-element-value.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-namespaced-attribute-value.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/results/test-set-namespaced-element-value.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-children-elements-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-children-elements.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-children-from-groupvars.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-children-with-attributes-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-children-with-attributes.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-element-implicitly.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-add-namespaced-children-elements.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-children-elements-xml.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-count-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-count.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-get-element-content-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-get-element-content.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-mutually-exclusive-attributes.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-pretty-print-only.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-pretty-print.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-remove-attribute.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-remove-element.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-remove-namespaced-attribute.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-remove-namespaced-element.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-require-valid-path.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-attribute-value-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-attribute-value.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-children-elements-level.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-children-elements-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-children-elements.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-element-value-empty.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-element-value-unicode.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-element-value.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-namespaced-attribute-value.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-set-namespaced-element-value.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test-xmlstring.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/cmprescott.xml/tests/test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/common/files/RPM-GPG-KEY-EPEL-7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/common/files/RPM-GPG-KEY-NGINX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/common/files/epel.repo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/common/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/confluence/host_vars/confluence-vm/ulimits.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ansible/roles/confluence/host_vars/confluence-vm/ulimits.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/CrowdSSO.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/cnc/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/cnc/Dockerfile.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/cnc/molecule.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/cnc/playbook.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/Dockerfile.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/INSTALL.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/create.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/destroy.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/inventory/group_vars/all" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/molecule.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/playbook.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/requirements.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/default/yaml-lint.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/github/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/github/Dockerfile.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/github/molecule.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/molecule/github/playbook.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/config-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/crowdsso-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/facts-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/install-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/packages-Debian.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/packages-RedHat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/tasks/setup-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/templates/crowd.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/templates/startup-init.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/templates/startup-supervisord" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/templates/startup-systemd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/vars/os-Debian.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_confluence/vars/os-RedHat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/CrowdSSO.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/cnc/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/cnc/Dockerfile.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/cnc/molecule.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/cnc/playbook.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/Dockerfile.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/INSTALL.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/create.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/destroy.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/inventory/group_vars/all" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/molecule.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/playbook.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/requirements.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/default/yaml-lint.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/github/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/github/Dockerfile.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/github/molecule.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/molecule/github/playbook.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/config-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/crowdsso-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/facts-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/install-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/packages-Debian.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/packages-RedHat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/tasks/setup-common.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/templates/crowd.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/templates/startup-init.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/templates/startup-supervisord" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/templates/startup-systemd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/vars/os-Debian.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/hudecof.atlassian_jira/vars/os-RedHat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/jira/host_vars/atlassian-vm-1/firewall.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ansible/roles/jira/host_vars/atlassian-vm-1/firewall.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/jira/host_vars/atlassian-vm-1/ulimits.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ansible/roles/jira/host_vars/atlassian-vm-1/ulimits.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/COPYING" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/tests/inventory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/linuxhq.selinux/tests/test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/marcelnijenhof.firewalld/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/filter_plugins/filters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/bond_configuration.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/bridge_configuration.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/debian.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/ethernet_configuration.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/redhat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tasks/route_table_configuration.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bond_Debian.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bond_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bond_slave_Debian.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bond_slave_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bridge_Debian.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bridge_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bridge_port_Debian.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/bridge_port_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/ethernet_Debian.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/ethernet_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/interfaces.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/module.conf.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/route6_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/route_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/templates/rule_RedHat.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tests/interfaces.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tests/inventory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/tests/test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/michaelrigart.interfaces/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/provision-vm/host_vars/gsanso-fk/vm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ansible/roles/provision-vm/host_vars/gsanso-fk/vm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/tests/Vagrantfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/samdoran.repo_epel/tests/vagrant.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/defaults/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/handlers/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/meta/.galaxy_install_info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/meta/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tasks/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/templates/default.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/templates/service.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/mapping/etc/default/min" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/mapping/etc/systemd/system/min.service" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/minimum/etc/default/min" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/minimum/etc/systemd/system/min.service" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/swarm-manager/etc/default/swarm-manager" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/cases/swarm-manager/etc/systemd/system/swarm-manager.service" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/hosts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/requirements.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/run" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/tests/test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/roles/tumf.systemd-service/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/selinux.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/setup-confluence-systemd.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/superprod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ansible/test" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1761832044">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="bitbucket-vm" value="1" />
+          <entry key="cfg" value="3" />
+          <entry key="default" value="1" />
+          <entry key="defaultOKhttps" value="1" />
+          <entry key="inventory" value="2" />
+          <entry key="j2" value="2" />
+          <entry key="md" value="1" />
+          <entry key="test" value="1" />
+          <entry key="yml" value="79" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Ini" value="1" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="YAML" value="76" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="inventory" value="55" />
+          <entry key="yml" value="1844" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="55" />
+          <entry key="YAML" value="1844" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ansible_devel" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/all.yml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/mysql.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>file</find>
+      <find>Replace ip address references</find>
+      <find>dump_file</find>
+      <find>confluence_dump_file</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>{{ dump_file }}</replace>
+      <replace>Replace ip address references in MySQL dump file</replace>
+      <replace>confluence_dump_file</replace>
+      <replace>jira_dump_file</replace>
+      <replace>xml export</replace>
+      <replace>bitbucket_dump_file</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../ansible/roles/sync-data/host_vars/jenkins-vm.yml" />
+        <option value="/tmp/devops/ansible/wordpress.yml" />
+        <option value="/tmp/devops/ansible/group_vars/all.yml" />
+        <option value="/tmp/devops/ansible/host_vars/centosvm/main.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/provision-vm/host_vars/gsanso-fk/vm.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/provision-vm/roles/ansible-role-provision-vm/templates/kickstart.cfg" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/jenkins-vm.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/sync-jenkins.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/inventory" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/roles/fourforbusiness.mysql-prepare-db/meta/main.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/jira-vm.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/testserver.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/roles/fourforbusiness.mysql-prepare-db/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/confluence-vm.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-confluence-db.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-jira-db.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-confluence-xml.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-jira-xml.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/files/defaultOKhttps" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/group_vars/all.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/restore-bitbucket-db.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/sync-confluence.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/sync-jira.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/migrate-data/sync-bitbucket.yml" />
+        <option value="$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/mysql.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1476" />
+    <option name="y" value="168" />
+    <option name="width" value="1090" />
+    <option name="height" value="1024" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ansible_devel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible_devel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible_devel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="bitbucket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible_devel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="bitbucket" type="462c0819:PsiDirectoryNode" />
+              <item name="host_vars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible_devel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="bitbucket" type="462c0819:PsiDirectoryNode" />
+              <item name="host_vars" type="462c0819:PsiDirectoryNode" />
+              <item name="bitbucket-vm" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="/tmp/devops" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../ansible/roles/migrate-data" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="faa24b74-7a13-45d6-bad2-953af6e72846" name="Default Changelist" comment="" />
+      <created>1554106990796</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554106990796</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1074" y="28" width="1292" height="749" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887386" visible="true" weight="0.3770883" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5011261" side_tool="true" weight="0.24986821" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32995495" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///tmp/devops/ansible/roles/bertvv.mariadb/defaults/main.yml" />
+    <entry file="file:///tmp/devops/ansible/roles/makarenalabs.wordpress/templates/wp-config.php.j2" />
+    <entry file="file:///tmp/devops/ansible/roles/makarenalabs.wordpress/templates/nginx-vhost.j2" />
+    <entry file="file:///tmp/devops/ansible/roles/makarenalabs.wordpress/defaults/main.yml" />
+    <entry file="file:///tmp/devops/ansible/roles/makarenalabs.wordpress/tests/test.yml" />
+    <entry file="file:///tmp/devops/ansible/mariadb.yml" />
+    <entry file="file:///tmp/devops/ansible/test" />
+    <entry file="file:///tmp/devops/ansible/host_vars/centosvm/main.yml" />
+    <entry file="file:///tmp/devops/ansible/group_vars/all.yml" />
+    <entry file="file:///tmp/devops/ansible/wordpress.yml" />
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/defaults/main.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/roles/ansible-role-provision-vm/defaults/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2187" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/roles/ansible-role-provision-vm/tasks/image-guest.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/host_vars/superprod/vm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="11" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/roles/ansible-role-provision-vm/tasks/kickstart-guest.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///tmp/devops/ansible/roles/bertvv.mariadb/vars/RedHat.yml" />
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/roles/ansible-role-provision-vm/templates/kickstart.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/provision-vm/host_vars/gsanso-fk/vm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/bitbucket-vm.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/roles/ypid.synchronize/tasks/main.yml" />
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/jenkins-vm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/ansible.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/inventory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="3" selection-start-line="12" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/roles/ypid.synchronize/defaults/main.yml" />
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/roles/fourforbusiness.mysql-prepare-db/meta/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/bitbucket/bitbucket-vm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/bitbucket/install-bitbucket.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/roles/fourforbusiness.mysql-prepare-db/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/roles/fourforbusiness.mysql-prepare-db/defaults/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="1" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/testserver.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="49" lean-forward="true" selection-start-line="10" selection-end-line="19" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/jenkins/roles/common/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="2" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/sync-jenkins.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="43" selection-start-line="26" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/restore-jira-db.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/confluence-vm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/roles/fourforbusiness.mysql-prepare-db/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/host_vars/jira-vm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/confluence/host_vars/confluence-vm/mysql.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/sync-confluence.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/sync-jira.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/group_vars/all.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/restore-confluence-db.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/files/default">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2755">
+          <caret line="145" column="1" selection-start-line="62" selection-end-line="145" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/files/defaultOKhttps">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4199">
+          <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/restore-jira-xml.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/restore-confluence-xml.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/sync-bitbucket.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/migrate-data/restore-bitbucket-db.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/all.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ansible/roles/bitbucket/host_vars/bitbucket-vm/mysql.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

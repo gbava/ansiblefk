@@ -1,0 +1,23 @@
+---
+- name: copy init script
+  template:
+    src: "{{ lookup('first_found', findme)}}"
+    dest: /etc/init.d/{{ tomcat_service }}
+    mode: 0755
+    owner: root
+    group: root
+  vars:
+    findme:
+      - "{{ tomcat_dir_prefix }}/init.sh.{{ inventory_hostname }}.j2"
+      - "{{ tomcat_dir_prefix }}/init.sh.{{ ansible_distribution }}.j2"
+      - "{{ tomcat_dir_prefix }}/init.sh.j2"
+      - "init.sh.{{ inventory_hostname }}.j2"
+      - "init.sh.{{ ansible_distribution }}.j2"
+      - "init.sh.j2"
+
+- name: ensure tomcat service started/stopped
+  service:
+    name: "{{ tomcat_service }}"
+    state: "{{ tomcat_service_state }}"
+    enabled: "{{ tomcat_service_enabled }}"
+    pattern: org.apache.catalina.startup.Bootstrap

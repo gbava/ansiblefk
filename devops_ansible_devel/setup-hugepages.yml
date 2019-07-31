@@ -1,0 +1,5 @@
+---
+- name: Configure Hugepagses
+  hosts: all
+  roles:
+    - { role: ansible-role-hugepages }

@@ -1,0 +1,21 @@
+# Specify the direction of the synchronization.
+# In push mode the localhost or delegate is the source.
+# In pull mode the remote host in context is the source.
+
+- name: Synchronization test
+  debug: msg="{{ item }}"
+  with_items: "{{ raw_data_dirs }}"
+
+- name: Origin and Destination
+  debug:
+    msg: "Origin: {{ ansible_host }} > Destination: {{ nfs_host }}"
+
+- name: Synchronizing files from ServerA to ServerB
+  synchronize:
+    src: "{{ item }}"
+    dest: "{{ mountpoint_dir }}"
+    mode: push
+    recursive: yes
+    owner: no
+  with_items: "{{ raw_data_dirs }}"
+  delegate_to: "{{ ansible_host }}"

@@ -1,0 +1,24 @@
+---
+- hosts: all 
+  gather_facts: yes
+  become: yes
+  tasks:
+
+  - name: Install dependencies if absent
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - python-docker-py
+
+  - name: Run GoCD Agent
+    docker_container:
+      name: gocd-agent-devops-test
+      image: gocd/gocd-agent-centos-7:v18.12.0
+      env:
+        GO_SERVER_URL=https://192.168.1.34:8154/go 
+      volumes:
+        - "/volumes/gocd-agent:/home/go"
+        - "/volumes/godata-agent:/godata"
+      state: started
+      restart_policy: always

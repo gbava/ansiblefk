@@ -1,0 +1,19 @@
+- hosts: all
+  roles:
+    - { role: michaelrigart.interfaces }
+
+  vars:
+
+    interfaces_ether_interfaces:
+     - device: eth1
+       bootproto: static
+       address: 192.168.1.36
+       netmask: 255.255.255.0
+       gateway: 192.168.1.1
+       #dnsnameservers: 192.0.2.1 192.0.2.2
+       dnssearch: "{{ fqdn }}"
+       #mtu: 9000
+       route:
+        - network: 192.168.1.0
+          netmask: 255.255.255.0
+          gateway: 192.168.1.1

@@ -1,0 +1,21 @@
+---
+
+- name: Restart statd
+  service:
+    name: statd
+    state: restarted
+
+- name: Reload statd
+  service:
+    name: statd
+    state: reloaded
+
+- name: Restart lockd
+  service:
+    name: lockd
+    state: restarted
+
+- name: Reload lockd
+  service:
+    name: lockd
+    state: reloaded

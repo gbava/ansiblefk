@@ -1,0 +1,32 @@
+---
+- hosts: all
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Create nfs mount point dirs
+      file:  
+        path: {{ item }}
+        state: directory
+      with_items:
+      - "/home_superprod"
+      - "/bighdd1"
+      - "/bighdd2"
+
+  roles:
+    - { role: ansible-role-nfs-mount }
+
+  vars:
+    nfs_share_mounts:
+    - path: /home/home_superprod
+      location: 192.168.1.23:/home
+    - path: /bighdd1
+      location: 192.168.1.23:/bighdd1
+    - path: /bighdd2
+      location: 192.168.1.23:/bighdd2
+#      opts: "{{ nfs_mount_opts }},rw"
+#  - path: /mnt/ex_passno
+#    location: nfs.example.org:/ex_passno
+#    passno: 0
+#  - path: /mnt/ex_dump
+#    location: nfs.example.org:/ex_dump
+#    dump: 0 

@@ -1,0 +1,5 @@
+---
+- hosts: rmachine
+  roles:
+    - { role: reallyenglish.nfs-client }
+    - { role: sync-raw-data }

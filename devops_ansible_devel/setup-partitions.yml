@@ -1,0 +1,22 @@
+---
+- name: Configure disk partitions
+  hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+
+  - parted:
+      device: /dev/vdb
+      number: 1
+      state: present
+
+  - name: Create partition
+    filesystem:
+      fstype: xfs
+      dev: /dev/vdb1
+     
+  - mount:
+      fstype: xfs
+      src: /dev/vdb1
+      path: /data
+      state: mounted

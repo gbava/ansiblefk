@@ -1,0 +1,4 @@
+---
+- hosts: test
+  roles:
+    - { role: ansible-role-mysql }

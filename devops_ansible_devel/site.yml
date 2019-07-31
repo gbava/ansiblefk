@@ -1,0 +1,11 @@
+#- import_playbook: setup-partitions.yml
+
+- import_playbook: setup-etc-hosts.yml
+
+- import_playbook: install-role-nfs.yml
+
+- import_playbook: setup-path.yml
+
+- import_playbook: enable_ssh_password_login.yml
+
+- import_playbook: copy-ssh-keys.yml

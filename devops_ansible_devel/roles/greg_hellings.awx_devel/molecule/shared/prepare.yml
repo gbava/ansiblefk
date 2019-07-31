@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+    - greg_hellings.docker
+  vars:
+    ansible_python_interpreter: /usr/bin/python3

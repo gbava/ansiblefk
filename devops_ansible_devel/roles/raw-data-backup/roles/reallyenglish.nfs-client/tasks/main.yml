@@ -1,0 +1,17 @@
+---
+# tasks file for ansible-role-nfs-client
+
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- include: "install-{{ ansible_os_family }}.yml"
+
+- include: "configure-{{ ansible_os_family }}.yml"
+
+- name: Mount or unmount nfs_client_mount
+  mount:
+    name: "{{ item.path }}"
+    src: "{{ item.src }}"
+    opts: "{{ item.opts }}"
+    fstype: nfs
+    state: "{{ item.state }}"
+  with_items: "{{ nfs_client_mount }}"

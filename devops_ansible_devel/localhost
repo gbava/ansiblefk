@@ -1,0 +1,7 @@
+---
+
+# NFS shares
+- nfs_exports:
+  - name: "dev_gsanso"
+    path: "/home/gsanso/dev"
+    writable: yes

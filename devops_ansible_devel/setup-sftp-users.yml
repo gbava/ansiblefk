@@ -1,0 +1,14 @@
+---
+- name: Setup ftp users
+  hosts: all
+  become: yes
+  roles:
+    - { role: johanmeiring.sftp-server }
+  vars:
+
+    - sftp_users:
+      - name: gsanso
+        #password: "$6$FmjxdZSdvuffnwZ6$eK60gp/s7rvnP4OlYPvnunf./3ub9yvF71kvKXxDbGfaOznzp3ZSJAf76JnIWBSp.bZGxpinJwju0YVe9.Tpc0"  # discolo10
+        shell: False
+        sftp_directories:
+        - "gsanso"

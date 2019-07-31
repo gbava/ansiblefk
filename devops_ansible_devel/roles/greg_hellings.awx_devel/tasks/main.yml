@@ -1,0 +1,42 @@
+- name: install dependencies
+  become: true
+  package:
+    name: "{{ awx_devel_packages }}"
+    state: present
+
+- name: start docker service
+  become: true
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: update ulimits
+  become: true
+  template:
+    src: 20-awx-devel.conf
+    dest: /etc/security/limits.d/20-awx-devel.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: clone awx repo
+  git:
+    repo: https://github.com/ansible/awx
+    dest: "{{ ansible_user_dir }}/awx"
+    version: "{{ awx_devel_version }}"
+
+- name: copy settings
+  copy:
+    remote_src: true
+    src: "{{ ansible_user_dir }}/awx/awx/settings/local_settings.py.docker_compose"
+    dest: "{{ ansible_user_dir }}/awx/awx/settings/local_settings.py"
+
+- name: build docker-compose targets
+  command: make "{{ item }}"
+  args:
+    chdir: "{{ ansible_user_dir }}/awx"
+  with_items:
+    - docker-compose-build
+    - ui-devel
+    - docker-compose

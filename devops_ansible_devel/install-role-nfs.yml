@@ -1,0 +1,8 @@
+- hosts: all
+  roles:
+    - morbidick.nfs
+  vars:
+    - nfs_exports:
+      - name: "dev_gsanso"
+        path: "/home/gaston.sanso/dev"
+        writable: yes

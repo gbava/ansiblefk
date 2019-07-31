@@ -1,0 +1,14 @@
+---
+- name: Instalar paquetes útiles (CentOS)
+  package: name={{ item }} state=present
+  with_items:
+  - epel-release
+  - python-setuptools
+  - python-devel
+  - python2-pip
+  - git
+  - vim
+  - curl
+  - bind-utils
+  - net-tools
+  when: ansible_distribution == 'CentOS'

@@ -1,0 +1,27 @@
+---
+# Gather the SSH of all hosts and add them to every host in the inventory
+# to allow passwordless SSH between them
+- hosts: all
+  become: yes
+  tasks:
+
+  - name: Generate SSH keys for normal user
+    shell: "ssh-keygen -q -t rsa -f /{{ ansible_ssh_user }}/.ssh/id_rsa -N ''"
+    args:
+      creates: "/home/{{ ansible_ssh_user }}/.ssh/id_rsa"
+
+  - name: Allow passwordless SSH between all hosts with normal user
+    shell: "/bin/cat /home/{{ ansible_ssh_user }}/.ssh/id_rsa.pub"
+    register: ssh_keys_normal
+
+  - name: create empty .ssh/authorized_keys file for normal user
+    file:
+      path: "/home/{{ ansible_ssh_user }}/.ssh/authorized_keys"
+      state: touch
+
+  - name: Allow passwordless SSH between all hosts with normal user
+    lineinfile:
+      dest: "/home/{{ ansible_ssh_user }}/.ssh/authorized_keys"
+      state: present
+      line:  " {{ hostvars[item]['ssh_keys_normal']['stdout'] }}"
+    with_items: "{{ groups['all']}}"

@@ -1,0 +1,2 @@
+[production]
+prod ansible_host=forwardkeys.com ansible_ssh_user=gaston.sanso ansible_become=true

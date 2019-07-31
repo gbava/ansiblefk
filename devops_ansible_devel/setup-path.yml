@@ -1,0 +1,19 @@
+---
+
+- name: Configuramos /etc/hosts
+  hosts: all
+  gather_facts: yes
+  tasks:
+
+    - name: Add IP address of all hosts to all hosts
+      lineinfile:
+        dest: /etc/hosts
+        line: "{{ hostvars[item].ansible_host }}  {{ hostvars[item].inventory_hostname }}"
+        state: present
+      with_items: "{{ groups.all }}"
+      when: item != "127.0.0.1"
+
+    - name: Add another bin dir to system-wide $PATH.
+      copy:
+        dest: /etc/profile.d/hadoop.sh
+        content: 'PATH=$PATH:/opt/hadoop/bin:/opt/hadoop/sbin'

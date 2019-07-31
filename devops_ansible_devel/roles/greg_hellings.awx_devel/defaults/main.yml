@@ -1,0 +1,13 @@
+awx_devel_version: devel
+awx_devel_repositories:
+  - name: nodejs6-lts
+    # yamllint disable-rule rule:line-length
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/greghellings/nodejs-lts/fedora-$releasever-$basearch/
+    gpgcheck: true
+    # yamllint disable-rule rule:line-length
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/greghellings/nodejs-lts/pubkey.gpg
+    repo_gpgcheck: false
+    enabled: true
+    skip_if_unavailable: true
+    async: true
+    description: COPR repo for LTS versions of NodeJS

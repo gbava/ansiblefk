@@ -1,0 +1,4 @@
+---
+- hosts: testvms
+  roles:
+    - { role: geerlingguy.ansible }

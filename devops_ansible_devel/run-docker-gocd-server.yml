@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+
+  - name: Run GoCD Server
+    docker_container:
+      name: gocd-server-devops-test
+      image: gocd/gocd-server:v18.12.0
+      #env:
+      volumes:
+        - "/volumes/gocd-server:/home/go"
+        - "/volumes/godata:/godata"          
+      ports:
+        - "8153:8153/tcp"
+        - "8154:8154/tcp"          
+      state: started
+      restart_policy: always

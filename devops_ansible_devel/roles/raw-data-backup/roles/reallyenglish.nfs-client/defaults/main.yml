@@ -1,0 +1,12 @@
+nfs_client_mount: []
+
+# FreeBSD only
+nfs_client_lockd_flags: ""
+nfs_client_statd_flags: ""
+
+# Debian/Ubuntu only
+nfs_client_rpcbind_flags: ""
+nfs_client_nfs_common_flags: {}
+nfs_client_nfs_common_flags_default:
+  NEED_GSSD: ""
+  STATDOPTS: ""

@@ -1,0 +1,7 @@
+---
+- hosts: test
+  roles:
+    - { role: ansible-role-universal-java }
+    - { role: ansible-role-openssl }
+    - { role: ansible-role-apr }
+    - { role: ansible-role-universal-tomcat }

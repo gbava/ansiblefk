@@ -1,0 +1,10 @@
+awx_devel_packages:
+  - docker
+  - docker-compose
+  - nodejs6
+  - nodejs6-npm
+  - nodejs6-devel
+  - make
+  - git
+  - libselinux-python
+  - gcc-c++

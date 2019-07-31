@@ -1,0 +1,32 @@
+---
+
+- name: Configuramos /etc/hosts
+  hosts: all
+  gather_facts: yes
+  tasks:
+
+    - name: Stop NetworkManager service and disable it
+      service:
+        name: NetworkManager 
+        state: stopped
+        enabled: no
+
+    - name: Add IP address of all hosts to all hosts
+      lineinfile:
+        dest: /etc/hosts
+        line: "{{ hostvars[item].ansible_host }}  {{ hostvars[item].inventory_hostname }}"
+        state: present
+      with_items: "{{ groups.all }}"
+      when: item != "127.0.0.1"
+
+    - name: Configuramos el resolv.conf
+      lineinfile:
+        dest: /etc/resolv.conf
+        line: "nameserver 8.8.8.8"
+        state: present
+
+    - name: Configuramos el default gw
+      lineinfile:
+        dest: /etc/sysconfig/network
+        line: "GATEWAY=192.168.1.1"
+        state: present

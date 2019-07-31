@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+
+  - name: Test fact var 
+    debug:
+      msg: "{{ today_date }}"
