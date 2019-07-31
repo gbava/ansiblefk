@@ -1,0 +1,24 @@
+---
+
+#ssl settings
+nossl: False
+ssl_country: ''
+ssl_state: ''
+ssl_city: ''
+ssl_org: ''
+
+# test users
+generate_testusers: False
+gen_test_username: ''
+gen_test_userpass: '$6$NqQZN4.O6J93PDXg$VbF7oebk09bOZrlnnCEOv42nxvskugdcO51PS520IzhIdvR.696y90EYHBQS1I9HOOWqrZSviEusWFctsSHnz.'
+
+# DO NOT USE TEST USERS IN PRODUCTION
+# password is 'password', generated with:
+# python -c "from passlib.hash import sha512_crypt; import getpass; print(sha512_crypt.using(rounds=5000).hash('password'));"
+
+# imagespawner, dockerspawner or sudospawner or sudospawner-lab
+#jupyterhub_spawner: 'sudospawner'
+jupyterhub_spawner: 'dockerspawner'
+
+#use this default image (notebook only)
+jupyterhub_spawner_docker_image: 'jupyterhub/systemuser'

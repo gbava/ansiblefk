@@ -1,0 +1,33 @@
+---
+
+#- name: Copy the EPEL repository definition
+#  copy: src=epel.repo dest=/etc/yum.repos.d/
+#
+#- name: Create the GPG key for EPEL
+#  copy: src=RPM-GPG-KEY-EPEL-7 dest=/etc/pki/rpm-gpg
+#
+#- name: ensure external EPEL repository config is present
+#  yum_repository:
+#    name: epel
+#    state: present
+
+- name: Install packages for debugging
+  yum:
+    name={{ item }}
+    state=installed
+  with_items:
+  - rsync
+  - vim
+  - net-tools
+  - bind-utils
+  - ntp
+  - ovirt-guest-agent-common
+
+- name: Set timezone
+  timezone:
+    name: Europe/Madrid
+
+- name: Set hostname
+  hostname:
+    name: "{{ hostname }}"
+  when:  hostname  is defined

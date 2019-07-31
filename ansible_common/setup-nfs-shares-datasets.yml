@@ -1,0 +1,118 @@
+---
+- hosts: all
+  gather_facts: yes 
+  become: yes
+
+  vars:
+    # Set this directory where symlinks will be created
+    nfs_server: 192.168.1.20
+    symlink_dst_dir: "/home/test"
+    nfs_mnt_dirs:
+    - "/bighdd1_mnt"
+      #- "/bighdd2_mnt"
+    - "/sddbig/totalmarketdata_mnt"
+      #- "/fastdisk1/totalmarketdata_mnt"
+      #- "/fastdisk2/totalmarketdata_mnt"
+
+    nfs_share_mounts:
+    - path: "/bighdd1_mnt"
+      location: "{{ nfs_server }}:/shared_data1/bighdd1"
+      #- path: "/bighdd2_mnt"
+      #location: "{{ nfs_server }}:/shared_data1/bighdd2"
+    - path: "/sddbig_mnt/totalmarketdata"
+      location: "{{ nfs_server }}:/shared_data1/sddbig/totalmarketdata"
+      #- path: "/fastdisk1_mnt/totalmarketdata"
+      #location: "{{ nfs_server }}:/shared_data1/fastdisk1/totalmarketdata"
+      #- path: "/fastdisk2_mnt/totalmarketdata"
+      #location: "{{ nfs_server }}:/shared_data1/fastdisk2/totalmarketdata"
+
+
+
+#    - path: /home/superprod
+#      location: 192.168.1.23:/sddbig
+#      opts: "{{ nfs_mount_opts }},rw"
+#  - path: /mnt/ex_passno
+#    location: nfs.example.org:/ex_passno
+#    passno: 0
+#  - path: /mnt/ex_dump
+#    location: nfs.example.org:/ex_dump
+#    dump: 0
+
+  tasks:
+    - name: Create nfs mount point dirs
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items: "{{ nfs_mnt_dirs }}"
+
+### Symlinks ###
+
+    - name: Create symbolic links for capacitydata
+      file:
+        src: /bighdd1_mnt/capacitydata/2.processed
+        dest: "{{ symlink_dst_dir }}/capacitydata"
+        state: link
+        force: yes
+
+
+    - name: Create symbolic links for faresdata
+      file:
+        src: /bighdd1_mnt/faresdata/2.processed
+        dest: "{{ symlink_dst_dir }}/faresdata"
+        state: link
+        force: yes
+
+    - name: Create symbolic links for gdsdata
+      file:
+        src: /bighdd1_mnt/gdsdata
+        dest: "{{ symlink_dst_dir }}/gdsdata"
+        state: link
+        force: yes
+
+    - name: Create symbolic links for gfkdata
+      file:
+        src: /bighdd1_mnt/gfkdata/8.database
+        dest: "{{ symlink_dst_dir }}/gfkdata"
+        state: link
+        force: yes
+
+    - name: Create symbolic links for skyscannerdata
+      file:
+        src: /bighdd1_mnt/skyscannerdata/8.database
+        dest: "{{ symlink_dst_dir }}/skyscannerdata"
+        state: link
+        force: yes
+
+
+    - name: Create symbolic links for skyscannersearchdata
+      file:
+        src: /bighdd1_mnt/skyscannersearchdata/8.database
+        dest: "{{ symlink_dst_dir }}/skyscannersearchdata"
+        state: link
+        force: yes
+
+
+    - name: Create symbolic links for SLD
+      file:
+        src: /bighdd1_mnt/SLD/
+        dest: "{{ symlink_dst_dir }}/SLD"
+        state: link
+        force: yes
+
+    - name: Create symbolic links for atpcodata
+      file:
+        src: /bighdd1_mnt/atpcodata/
+        dest: "{{ symlink_dst_dir }}/atpcodata"
+        state: link
+        force: yes
+
+    - name: Create symbolic links for totalmarketdata
+      file:
+        src: /sddbig_mnt/totalmarketdata/8.database
+        dest: "{{ symlink_dst_dir }}/totalmarketdata"
+        state: link
+        force: yes
+
+
+  roles:
+    - { role: openmicroscopy.nfs-mount }

@@ -1,0 +1,36 @@
+---
+- hosts: all
+  gather_facts: yes
+  become: yes
+
+### Setup SHARES ###
+#  roles:
+#    - lae.nfs
+#  vars:
+#    nfs_exports:
+#      - path: /var/log
+#        exports:
+#          - "*(ro,sync,nohide)"
+#      - path: /home
+#        exports:
+#          - "10.20.30.0/24(rw)"
+#      - path: /backups
+#        exports:
+#          - "10.20.30.0/24(rw,no_root_squash)"
+
+### Setup MOUNTS ###
+#  roles:
+#    - lae.nfs
+#  vars:
+#    nfs_mounts:
+#      - path: /mnt/logs
+#        remote_host: nfs-server.local
+#        remote_path: /var/log
+#        options: ro
+#      - path: /mnt/home
+#        remote_host: nfs-server.local
+#        remote_path: /home
+#        disabled: yes
+#      - path: /mnt/backups
+#        remote_host: nfs-server.local
+#        remote_path: /backups

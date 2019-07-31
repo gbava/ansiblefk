@@ -1,0 +1,8 @@
+---
+- name: Install MariaDB 
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - { role: christopherdavenport.universal-java }          
+    - { role: mrlesmithjr.mariadb-mysql }

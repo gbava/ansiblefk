@@ -1,0 +1,11 @@
+---
+- name: Setup VM 
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - { role: michaelrigart.interfaces }
+    - { role: samdoran.repo_epel }
+    - { role: common }          
+    - { role: jtyr.ulimit  }
+    - { role: marcelnijenhof.firewalld }

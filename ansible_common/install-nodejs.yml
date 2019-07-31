@@ -1,0 +1,7 @@
+---
+- name: Install Node 
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - { role: geerlingguy.nodejs }          

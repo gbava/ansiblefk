@@ -1,0 +1,10 @@
+---
+- name: Setup Jupyter profile 
+  hosts: all
+
+  roles:
+    - { role: andrewrothstein.jupyter-profile }
+
+  vars:
+    jupyter_profile_name: jupyter-profile-superprod
+    jupyter_profile_environment: jupyter-profile-superprod-environment.yml

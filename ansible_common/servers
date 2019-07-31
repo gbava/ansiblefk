@@ -1,0 +1,4 @@
+[servers]
+superprod ansible_host=192.168.1.23 ansible_ssh_user=gaston.sanso ansible_become=true
+testserver ansible_host=192.168.1.21 ansible_ssh_user=gaston.sanso ansible_become=true
+rmachine ansible_host=192.168.1.27 ansible_ssh_user=gaston.sanso ansible_become=true

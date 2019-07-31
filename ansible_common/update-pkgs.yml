@@ -1,0 +1,6 @@
+---
+- name: Setup package upgrades
+  hosts: all
+
+  roles:
+    - { role: sbaerlocher.update_management }

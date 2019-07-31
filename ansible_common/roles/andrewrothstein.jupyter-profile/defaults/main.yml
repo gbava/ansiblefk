@@ -1,0 +1,32 @@
+---
+jupyter_profile_name : jupyter
+jupyter_profile_environment: environment.yml
+
+# Config options listed with key/option-name and value that will be added to the default options
+#jupyter_profile_config_options:
+#  - key : NotebookApp.base_url
+#    value: /
+
+# Default kernel spec manager class that will be used
+#jupyter_profile_kernel_spec_manager_class: nb_conda_kernels.CondaKernelSpecManager
+
+# Default extensions that will be added to jupyter notebook
+#jupyter_profile_nb_conda_extension: True
+#jupyter_profile_nb_anacondacloud_extension: True
+#jupyter_profile_nb_present_extension: True
+
+# To manage list of nbextensions that are loaded, use following var
+#jupyter_profile_nbextensions: '{ "toc": True, "nbconda": True, "nb_anacondacloud": False }'
+
+# Option to clean conda downloads and cached packages
+jupyter_profile_conda_cleanup: False
+
+# Escalates by default 
+#jupyter_profile_privilege_escalate: True
+jupyter_profile_conda_root: /usr/local/anaconda
+
+jupyter_profile_dflt_addl_pkgs:
+  - p: jupyter
+  - p: nb_conda
+  - p: nbpresent
+  - p: nb_anacondacloud

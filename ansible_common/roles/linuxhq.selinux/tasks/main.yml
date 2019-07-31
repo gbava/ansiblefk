@@ -1,0 +1,32 @@
+---
+- name: Ensure that the selinux packages are installed
+  tags: selinux
+  become: true
+  yum:
+    name: "{{ item }}"
+    state: present
+  register: selinux_yum
+  loop:
+    - libselinux-python
+    - selinux-policy
+
+- name: Applying selinux policy and state configurations
+  tags: selinux
+  become: true
+  selinux:
+    conf: "{{ selinux_conf }}"
+    policy: "{{ selinux_policy }}"
+    state: "{{ selinux_state }}"
+  register: selinux_module
+  when: selinux_yum is success
+
+- name: Attempting to reboot host, if applicable
+  tags: selinux
+  become: true
+  reboot:
+    reboot_timeout: "{{ selinux_reboot_timeout }}"
+  when:
+    - selinux_module is changed
+    - selinux_module.reboot_required|bool
+    - selinux_reboot|bool
+...

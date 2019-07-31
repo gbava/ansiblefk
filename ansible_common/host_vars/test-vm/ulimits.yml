@@ -1,0 +1,19 @@
+---
+
+ulimit_config:
+    - domain: tomcat 
+      type: soft
+      item: nofile
+      value: 1024000 
+    - domain: tomcat
+      type: hard
+      item: nofile
+      value: 1024000
+    - domain: tomcat 
+      type: soft
+      item: nproc
+      value: 4096
+    - domain: tomcat
+      type: hard
+      item: nproc
+      value: 8192

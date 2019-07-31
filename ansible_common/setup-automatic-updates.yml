@@ -1,0 +1,7 @@
+---
+- name: Setup Daily Automatic Updates
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - { role: sbaerlocher.update_management }          

@@ -1,0 +1,25 @@
+[servers]
+superprod ansible_host=192.168.1.23 ansible_ssh_user=gaston.sanso ansible_become=true
+testserver ansible_host=192.168.1.21 ansible_ssh_user=gaston.sanso ansible_become=true
+rmachine ansible_host=192.168.1.27 ansible_ssh_user=gaston.sanso ansible_become=true
+
+[atari]
+atari-vm ansible_host=192.168.1.50 ansible_ssh_user=gaston.sanso ansible_become=true
+
+[dockervm]
+docker-vm ansible_host=192.168.1.44 ansible_user=gaston.sanso ansible_become=true
+
+[jenkins]
+jenkins-vm ansible_host=192.168.1.46 ansible_ssh_user=gaston.sanso ansible_become=true
+
+[mysql]
+mysql-vm ansible_host=192.168.1.52 ansible_ssh_user=gaston.sanso ansible_become=true
+
+[atlassian]
+confluence-vm ansible_host=192.168.1.40 ansible_ssh_user=gaston.sanso ansible_become=true
+atlassian-vm ansible_host=192.168.1.39 ansible_ssh_user=gaston.sanso ansible_become=true
+bitbucket-vm ansible_host=192.168.1.45 ansible_ssh_user=gaston.sanso ansible_ssh_port=1222 ansible_become=true
+
+[awx]
+awx-vm ansible_host=192.168.1.34 ansible_ssh_user=gaston.sanso ansible_become=true
+

@@ -1,0 +1,17 @@
+---
+dependencies: []
+galaxy_info:
+  role_name: selinux
+  author: tkimball83
+  description: RHEL/CentOS - Security-Enhanced Linux
+  license: GPLv3
+  min_ansible_version: 2.7
+  platforms:
+    - name: EL
+      versions:
+        - 5
+        - 6
+        - 7
+  galaxy_tags:
+    - selinux
+...

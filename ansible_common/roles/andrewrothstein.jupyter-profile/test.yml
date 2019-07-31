@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - role: '{{playbook_dir}}'
+      jupyter_profile_name: ansible-jupyter-profile
+      jupyter_profile_environment: jupyter-profile-test-environment.yml

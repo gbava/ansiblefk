@@ -1,0 +1,24 @@
+---
+- name: Create user and groups for IT members 
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+
+    - name: Ensure groups exists
+      group:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - admins
+        - developers
+        - wheel 
+
+    - name: Create fkit user
+      user:
+        name: fkit
+        password: $6$Salt$vVE2uP.mjewTluIbP0uRqJvxeTDQHxcNlMNj7AEWg1cnusTCE1OnQ3pUlKRqDvxx0y.oewgl5K2IOWItk4y3M1
+        groups: admins,developers,wheel
+        createhome: yes
+        shell: /bin/bash
+        append: yes

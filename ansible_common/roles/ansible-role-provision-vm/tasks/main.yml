@@ -1,0 +1,146 @@
+---
+- name: Check hyper is defined
+  assert:
+    that: hyper is defined
+    msg: "hyper must be set to a hypervisor host where you want VMs to run"
+
+- name: Check network configuration for image-based deployments
+  assert:
+    that: cloud_init_networks is defined
+    msg: "Please configure your networks using cloud_init_networks. See defaults/main.yml"
+  when:
+    - guest_type is defined
+    - guest_type == 'image'
+
+# Most of this code will run on the hypervisor as defined by the hyper varible
+# We use a block to reduce repeating the 'delegate_to' for every task
+- block:
+
+#  - name: gather hypervisor facts
+#    setup:
+
+  - name: group hypervisors by distro
+    group_by:
+      key: "os_{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+  - name: Check if VM exists already
+    virt:
+      name: "{{ vm_name }}"
+      command: get_xml
+      uri: qemu:///system
+    register: guest_exists
+    ignore_errors: yes
+    become: yes
+
+  - name: Ensure libvirt image directory is present
+    file:
+      path: "{{ image_path }}"
+      state: directory
+      mode: "0711"
+      owner: root
+      group: root
+    become: yes
+    when: guest_exists is failed
+
+  - name: create a remote temp directory
+    command: mktemp -d "{{ provision_tempdir }}/provision_vm.XXXX"
+    register: temp_dir
+    when: guest_exists is failed
+
+  - name: Set playbook temp_dir as fact
+    set_fact:
+      runtime_tempdir: "{{ temp_dir.stdout }}"
+    when: guest_exists is failed
+
+  - name: Change ownership of temp directory
+    file:
+      path: "{{ runtime_tempdir }}"
+      state: directory
+      mode: 0700
+      owner: "{{ qemu_user }}"
+      group: "{{ qemu_group }}"
+    become: yes
+    when: guest_exists is failed
+
+  delegate_to: "{{ hyper }}"
+  # End of block
+
+- name: Prepare to start the guest using Kickstart
+  import_tasks: kickstart-guest.yml
+  when:
+    - guest_type is not defined or guest_type != "image"
+    - guest_exists is failed
+
+- name: Prepare to start the guest using an OpenStack image
+  import_tasks: image-guest.yml
+  when:
+    - guest_type is defined
+    - guest_type == 'image'
+    - guest_exists is failed
+
+- name: Deploy script to deploy VM
+  template:
+    src: virt-install-script.sh.j2
+    dest: "{{runtime_tempdir}}/virt-install-script.sh.j2"
+  become: yes
+  delegate_to: "{{ hyper }}"
+  when: guest_exists is failed
+
+- name: Start deployment of VM
+  command: "bash {{runtime_tempdir}}/virt-install-script.sh.j2"
+  args:
+    creates: "/etc/libvirt/qemu/{{ vm_name }}.xml"
+  become: yes
+  environment: "{{ env_virt_install | default(omit) }}"
+  delegate_to: "{{ hyper }}"
+  register: virt_install_job
+  when: guest_exists is failed
+
+  # Force ansible to know the IP address of this host so it can connect
+  # This fixes things if you don't have the IP address in DNS or /etc/hosts.
+- name: Set ansible_host to the new guest IP address
+  set_fact: ansible_host={{ internal_ip }}
+  when: set_ansible_host_to_internal_ip == true
+
+- name: wait for VM to become available before continuing
+  wait_for:
+    port: 22
+    host: "{{ provisioning_wait_for_addr | default(ansible_host) }}"
+    timeout: 300
+    search_regex: OpenSSH
+  delegate_to: "{{ bastion_host | default(hyper) }}"
+  when: guest_exists is failed
+
+  # This attempts to handle the common case where the new VM has a new and
+  # unknown host key, because you just rebuilt this VM. Modern linux distro's
+  # protect ~/.ssh linux using selinux so you'll need libselinux-python.
+  # libselinux doesn't work in python virtual envs without screwing about,
+  # see:
+  # https://dmsimard.com/2016/01/08/selinux-python-virtualenv-chroot-and-ansible-dont-play-nice/
+  # Since this is a hassle this task is set to ignore errors. Pull requests
+  # are welcome! ;-)
+- name: Clear known_hosts for new VM
+  known_hosts:
+    name: "{{ item }}"
+    state: absent
+  when: guest_exists is failed
+  delegate_to: localhost
+  with_items:
+    - "{{ ansible_host | default('') }}"
+    - "{{ vm_name }}"
+  ignore_errors: yes
+- name: Wait for ssh key configuration by cloud-init
+  pause: seconds=10
+  when:
+    - guest_exists is failed
+    - guest_type is defined
+    - guest_type == 'image'
+
+- name: cleanup temporary install files
+  file:
+    path: "{{ runtime_tempdir }}"
+    state: absent
+  become: yes
+  delegate_to: "{{ hyper }}"
+  when: guest_exists is failed
+...

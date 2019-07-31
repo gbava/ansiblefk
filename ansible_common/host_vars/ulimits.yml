@@ -1,0 +1,24 @@
+---
+# {{ item.domain }} {{ item.type }} {{ item.item }} {{ item.value }}
+#jenkins      soft   nofile  4096
+#jenkins      hard   nofile  8192
+#jenkins      soft   nproc   30654
+#jenkins      hard   nproc   30654
+
+ulimit_config:
+    - domain: jenkins
+      type: soft
+      item: nofile
+      value: 4096
+    - domain: jenkins
+      type: hard
+      item: nofile
+      value: 8192
+    - domain: jenkins
+      type: soft
+      item: nproc
+      value: 30654
+    - domain: jenkins
+      type: hard
+      item: nproc
+      value: 30654

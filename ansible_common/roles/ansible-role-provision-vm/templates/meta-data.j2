@@ -1,0 +1,18 @@
+#cloud-config
+ds-mode: local
+instance-id: {{ vm_name }}
+local-hostname: {{ fqdn }}
+# The following block looks very debian-like but it works also in CentOS.
+network-interfaces: |
+{% for item in cloud_init_networks %}
+  auto {{ item.interface }}
+  iface {{ item.interface }} inet static
+  address {{ item.address }}
+  netmask {{ item.netmask }}
+{% if item.gateway is defined %}
+  gateway {{ item.gateway }}
+{% endif %}
+{% if item.nameservers is defined %}
+  dns-nameservers {% for server in item.nameservers %}{{ server }} {% endfor %}
+{% endif %}
+{% endfor %}

@@ -1,0 +1,26 @@
+---
+- name: Setup Conda env 
+  hosts: all
+
+  roles:
+    - { role: andrewrothstein.conda-env }
+
+  tasks:
+  - name: Create a conda environment
+    conda:
+      name: python
+      version: 3.7
+      environment: jupyter-superprod
+      state: present
+
+  - name: Install some packages in the environment
+    conda:
+      name:
+        - pandas
+        - numpy
+        - tensorflow
+      environment: jupyter-superprod
+
+  - name: Install R, using a versioned name
+    conda:
+        name: r-base=3.5.0

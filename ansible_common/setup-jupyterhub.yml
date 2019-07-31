@@ -1,0 +1,18 @@
+---
+- name: Setup Jupyterhub 
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - { role: natbusa.centos-jupyterhub }
+
+  vars:
+    jupyterhub_spawner: 'dockerspawner'
+    jupyterhub_spawner_docker_image: 'natbusa/jupyterhub-scipy-lab'
+    generate_testusers: False
+    gen_test_username:
+      - amy
+      - joe
+      - sue
+      - bob 
+

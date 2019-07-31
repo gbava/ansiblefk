@@ -1,0 +1,2 @@
+[nominatium]
+nominatium-vm ansible_host=192.168.1.51 ansible_ssh_user=vagrant ansible_become=true

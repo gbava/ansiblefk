@@ -1,0 +1,21 @@
+---
+
+####################################
+## Firewall
+firewalld_disable: yes
+
+####################################
+## NETWORK
+interfaces_ether_interfaces:
+  - device: eth0
+    bootproto: static
+    address: 192.168.1.52
+    netmask: 255.255.255.0
+    gateway: 192.168.1.1
+    dnsnameservers: 192.168.1.22 8.8.4.4
+    #dnssearch: "{{ fqdn }}"
+    #mtu: 9000
+    route:
+      - network: 192.168.1.0
+        netmask: 255.255.255.0
+        gateway: 192.168.1.1

@@ -1,0 +1,152 @@
+---
+#################################################
+# Common settings ###############################
+#################################################
+
+# Time to wait for install to finish (in minutes)
+install_timeout: "30"
+
+# Temp directory for storing provisioning related files
+provision_tempdir: "/tmp"
+
+# Where libvirt stores images and vms
+libvirt_root: "/var/lib/libvirt"
+
+# Where to put images
+image_path: "{{ libvirt_root }}/images"
+
+# Root disk size (GB)
+root_disk_size: 30
+
+# Default to a single vcpu
+vcpus: 1
+
+# Default to 1GB of memory
+ram: 1024
+
+# Default environment name (suggested use case: dev/test/prod)
+environment: default-environment
+
+# The network bridges a VM should get interfaces on
+#bridges: br-example
+
+# Hypervisor that should run this VM
+#hyper:
+
+# Define this if a ssh jump host which is not the hypervisor is needed to reach the VM
+#bastion_host:
+
+# When provisioning, set ansible_host value to the host's internal IP address
+set_ansible_host_to_internal_ip: Yes
+
+#################################################
+# Kickstart based deployment settings ###########
+#################################################
+
+# Disks
+disks:
+  - path: "{{ image_path }}/{{ fqdn }}.qcow2"
+    size: "{{ root_disk_size }}"
+
+# What packages to exclude in yum.conf at install time
+yum_exclude: ""
+
+# The basic set of packages to install during provisioning
+base_packages:
+ - vim*
+ - man
+ - mlocate
+ - nc
+ - strace
+ - tcpdump
+ - man
+ - rsync
+ - openssh-clients
+ - lvm2
+ - parted
+ - mailx
+ - dstat
+
+# Any additional packages to install during provisioning (as a list)
+extra_packages: []
+
+# Any packages to explicitly exclude during provisioning (as a list)
+exclude_packages: []
+
+# Extra repos to enable during kickstarting
+#repos:
+# - { name: "EPEL", url: "http://www.nic.funet.fi/pub/mirrors/fedora.redhat.com/pub/epel/7/x86_64/", pkgname: "epel-release" }
+
+# Empty environment for running virt-install
+env_virt_install: {}
+
+# Kickstart network configuration for the VM
+# A list of kickstart style network definitions
+#networks:
+#  - "network --onboot=on --device=eth0 --bootproto=static --ip=VM_IP --netmask=VM_NETMASK --gateway=VM_GATEWAY --nameserver=NAMESERVER --hostname=VM_HOSTNAME"
+
+# Root password in kickstart format
+#root_password: "{{ lookup('password', 'credentials/'+ inventory_hostname  +'_rootpw length=15') }}"
+
+# If you want to define a specific CPU model
+#virt_install_cpu_model:
+
+# Specify an os-variant if you want
+os_variant: "rhel6"
+
+# Kickstart URL for the installation
+#install_url: http://mirror.example.com/pub/Centos/7/os/x86_64/
+
+# A list of partitioning rules in kickstart format if you want a non-default partitioning scheme
+#kickstart_partitions:
+
+# Extra firewall rules to give kickstart. List of entries in kickstart format
+#firewall_rules:
+
+# A list of ssh keys to populate into /root/.ssh/authorized_keys
+#root_keys:
+
+# Yum proxy to use during kickstart
+#yum_proxy:
+
+# Optional log hosts
+#central_log_host:
+
+# Optionally prepopulate /etc/hosts with the IP for the puppetmaster
+#puppetmaster_ip:
+
+
+
+#################################################
+# Image based deployment settings ###############
+#################################################
+
+# Default download location of CentOS image
+image_url_prefix: http://cloud.centos.org/centos/7/images/
+image_name: CentOS-7-x86_64-GenericCloud.qcow2
+
+timezone: Europe/Helsinki
+
+# List of admin users to add to new VM
+adminusers: []
+
+# For cloud init networks, configure them in the same order the bridges
+# were added to the VM. gateway and nameservers are optional parameters
+#cloud_init_networks:
+#  - interface: eth0
+#    address: ip_for_eth0
+#    netmask: 255.255.255.0
+#  - interface: eth1
+#    address: ip_for_eth1
+#    netmask: 255.255.255.0
+#    gateway: gateway_ip
+#    nameservers: [ ns1_ip, ns2_ip ]
+
+
+# If you want to add all your users, use an `adminusers` dictionary as required
+# for ansible-role-users:
+#   https://github.com/CSC-IT-Center-for-Science/ansible-role-users
+#
+# You can also add a custom user to your guests for bootstrapping
+#bootstrap_user: bootstrap
+#bootstrap_ssh_key: ""

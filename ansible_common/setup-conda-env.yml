@@ -1,0 +1,10 @@
+---
+- name: Setup Conda env 
+  hosts: all
+
+  roles:
+    - { role: andrewrothstein.conda-env }
+
+  vars:
+    conda_env_name: jupyter_env
+    conda_env_environment: jupyter_env.yml

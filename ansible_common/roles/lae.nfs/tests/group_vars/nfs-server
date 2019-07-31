@@ -1,0 +1,12 @@
+---
+nfs_exports:
+  - path: /var/log
+    exports:
+      - "*(ro)"
+  - path: /home
+    exports:
+      - "test02.lxc(rw)"
+      - "deafbeef.local(ro)"
+  - path: /backups
+    exports:
+      - "test02.lxc(rw,no_root_squash)"

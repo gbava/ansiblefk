@@ -1,0 +1,21 @@
+---
+# {{ item.domain }} {{ item.type }} {{ item.item }} {{ item.value }}
+#confluence      soft    nofile  32768
+
+ulimit_config:
+    - domain: jira
+      type: soft
+      item: nofile
+      value: 32768
+    - domain: jira
+      type: hard
+      item: nofile
+      value: 32768
+    - domain: jira
+      type: soft
+      item: nproc
+      value: 4096
+    - domain: jira
+      type: hard
+      item: nproc
+      value: 8192

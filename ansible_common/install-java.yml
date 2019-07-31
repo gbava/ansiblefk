@@ -1,0 +1,7 @@
+---
+- name: Install JAVA 
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - { role: christopherdavenport.universal-java }          

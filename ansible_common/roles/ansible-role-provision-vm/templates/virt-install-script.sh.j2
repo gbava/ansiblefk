@@ -1,0 +1,30 @@
+virt-install \
+  --name={{ vm_name }} \
+  --vcpus={{ vcpus }} \
+  --ram={{ ram }} \
+{% for disk in disks %}
+  --disk path={{ disk.path }},cache=none,device=disk,bus=virtio,size={{ disk.size }},format={{ disk.format | default('qcow2') }} \
+{% endfor %}
+{% for bridge in bridges %}
+  --network bridge={{ bridge }},model=virtio \
+{% endfor %}
+  --connect=qemu:///system \
+  --autostart \
+  --noautoconsole \
+{% if guest_type is not defined or guest_type != "image" %}
+{% if ansible_distribution == "CentOS" and ansible_distribution_major_version == "7" %}
+  --cpu=host-passthrough \
+{% else %}
+  --cpu=host \
+{% endif %}
+  --graphics=vnc,keymap="fi" \
+  --os-variant={{ os_variant }} \
+  --wait={{ install_timeout }} \
+  --location={{ install_url }} \
+  --initrd-inject={{ runtime_tempdir }}/{{ vm_name }}.ks \
+  --extra-args="ks=file:/{{ vm_name }}.ks"
+{% else %}
+  --events on_poweroff=preserve \
+  --disk path={{ image_path}}/{{ vm_name }}.iso,device=cdrom,perms=ro \
+  --os-type=linux
+{% endif %}
